@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-
 import java.util.List;
 
 @RestController
@@ -21,7 +20,8 @@ public class TrelloController {
 
         List<TrelloBoardDto> trelloBoards = trelloClient.getTrelloBoards();
         trelloBoards.stream()
-                .filter(trelloBoardDto -> trelloBoardDto.getId().contains("") & trelloBoardDto.getName().contains("Kodilla"))
+                .filter(trelloBoardDto -> trelloBoardDto.getId()!=null & trelloBoardDto.getName()!=null
+                        & trelloBoardDto.getName().contains("Kodilla"))
                 .forEach(trelloBoardDto -> System.out.println(trelloBoardDto.getId()+" "+trelloBoardDto.getName()));
     }
 }
