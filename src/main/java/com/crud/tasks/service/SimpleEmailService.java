@@ -31,10 +31,10 @@ public class SimpleEmailService {
         mailMessage.setTo(mail.getMailTo());
         mailMessage.setSubject(mail.getSubject());
         mailMessage.setText(mail.getMessage());
-        /*if (mail.getToCc()!=null && !mail.getToCc().equals("")){
+        if (mail.getToCc()!=null && !mail.getToCc().equals("")){
             mailMessage.setCc(mail.getToCc());
             LOGGER.info("CC has been included");
-        }*/
+        }
         return mailMessage;
     }
 }
