@@ -16,7 +16,7 @@ public class TrelloController {
     @Autowired
     private TrelloService trelloService;
 
-    @RequestMapping(method = RequestMethod.GET, value = "getTrelloBoards")
+    @RequestMapping(method = RequestMethod.GET, value = "/getTrelloBoards")
     public List<TrelloBoardDto> getTrelloBoards() {
       return trelloService.fetchTrelloBoards();
         /*trelloBoards.stream()
@@ -31,8 +31,8 @@ public class TrelloController {
                             + trelloList.getId() + " - " + trelloList.isClosed()));
         });*/
     }
-    @RequestMapping(method = RequestMethod.POST, value = "createTrelloCard")
-    public CreatedTrelloCard createdTrelloCard(@RequestBody TrelloCardDto trelloCardDto){
+    @RequestMapping(method = RequestMethod.POST, value = "/createTrelloCard")
+    public CreatedTrelloCard createTrelloCard(@RequestBody TrelloCardDto trelloCardDto){
         return trelloService.createTrelloCard(trelloCardDto);
     }
 }
