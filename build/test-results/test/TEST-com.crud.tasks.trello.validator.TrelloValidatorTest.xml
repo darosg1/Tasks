@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.crud.tasks.trello.validator.TrelloValidatorTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2020-07-02T09:16:05" hostname="MacBook-Pro-DarekMarta.local" time="0.084">
+  <properties/>
+  <testcase name="validateCardTest" classname="com.crud.tasks.trello.validator.TrelloValidatorTest" time="0.064"/>
+  <testcase name="validateTrelloBoardsTest" classname="com.crud.tasks.trello.validator.TrelloValidatorTest" time="0.017"/>
+  <system-out><![CDATA[2020-07-02 11:16:05.971  INFO 1452 --- [    Test worker] c.c.t.trello.validator.TrelloValidator   : Starting filtering boards...
+2020-07-02 11:16:05.973  INFO 1452 --- [    Test worker] c.c.t.trello.validator.TrelloValidator   : Boards has been filtered. Current list size: 1
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

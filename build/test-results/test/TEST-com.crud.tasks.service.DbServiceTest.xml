@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.crud.tasks.service.DbServiceTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2020-07-02T09:16:07" hostname="MacBook-Pro-DarekMarta.local" time="0.05">
+  <properties/>
+  <testcase name="getAllTasksTest" classname="com.crud.tasks.service.DbServiceTest" time="0.005"/>
+  <testcase name="saveTaskTest" classname="com.crud.tasks.service.DbServiceTest" time="0.006"/>
+  <testcase name="getTaskTest" classname="com.crud.tasks.service.DbServiceTest" time="0.004"/>
+  <testcase name="deleteTaskTest" classname="com.crud.tasks.service.DbServiceTest" time="0.026"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
