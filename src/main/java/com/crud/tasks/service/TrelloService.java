@@ -18,7 +18,7 @@ public class TrelloService {
     @Autowired
     private TrelloClient trelloClient;
     @Autowired
-    private SimpleEmailService emailService;
+    private SimpleEmailService simpleEmailService;
 
     private static final String SUBJECT = "Tasks: new Trello card";
 
@@ -28,7 +28,7 @@ public class TrelloService {
 
     public CreatedTrelloCardDto createTrelloCard(final TrelloCardDto trelloCardDto) {
         CreatedTrelloCardDto newCard = trelloClient.createNewCard(trelloCardDto);
-        ofNullable(newCard).ifPresent(card->emailService.send(new Mail(adminConfig.getAdminMail(), SUBJECT,
+       ofNullable (newCard).ifPresent( card->simpleEmailService.send(new Mail(adminConfig.getAdminMail(), SUBJECT,
                 "New card: " + card.getName() + " has been created on your Trello account", adminConfig.getAdminMail())));
         return newCard;
     }
