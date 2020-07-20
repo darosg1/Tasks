@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.crud.tasks.controller.TaskControllerTest" tests="5" skipped="0" failures="1" errors="0" timestamp="2020-07-02T09:16:05" hostname="MacBook-Pro-DarekMarta.local" time="0.376">
+<testsuite name="com.crud.tasks.controller.TaskControllerTest" tests="5" skipped="0" failures="1" errors="0" timestamp="2020-07-20T18:01:01" hostname="MacBook-Pro-DarekMarta.local" time="0.674">
   <properties/>
-  <testcase name="updateTask" classname="com.crud.tasks.controller.TaskControllerTest" time="0.129">
+  <testcase name="updateTask" classname="com.crud.tasks.controller.TaskControllerTest" time="0.407">
     <failure message="java.lang.AssertionError: No value at JSON path &quot;$.id&quot;" type="java.lang.AssertionError">java.lang.AssertionError: No value at JSON path &quot;$.id&quot;
 	at org.springframework.test.util.JsonPathExpectationsHelper.evaluateJsonPath(JsonPathExpectationsHelper.java:295)
 	at org.springframework.test.util.JsonPathExpectationsHelper.assertValue(JsonPathExpectationsHelper.java:72)
 	at org.springframework.test.web.servlet.result.JsonPathResultMatchers.lambda$value$0(JsonPathResultMatchers.java:87)
 	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:196)
-	at com.crud.tasks.controller.TaskControllerTest.updateTask(TaskControllerTest.java:97)
+	at com.crud.tasks.controller.TaskControllerTest.updateTask(TaskControllerTest.java:104)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -90,11 +90,18 @@ Caused by: java.lang.IllegalArgumentException: json can not be null or empty
 	... 78 more
 </failure>
   </testcase>
-  <testcase name="getTask" classname="com.crud.tasks.controller.TaskControllerTest" time="0.05"/>
-  <testcase name="createTask" classname="com.crud.tasks.controller.TaskControllerTest" time="0.05"/>
-  <testcase name="deleteTask" classname="com.crud.tasks.controller.TaskControllerTest" time="0.044"/>
-  <testcase name="getTasks" classname="com.crud.tasks.controller.TaskControllerTest" time="0.032"/>
-  <system-out><![CDATA[2020-07-02 11:15:46.412  INFO 1452 --- [   scheduling-1] c.crud.tasks.service.SimpleEmailService  : Email has been sent
+  <testcase name="getTask" classname="com.crud.tasks.controller.TaskControllerTest" time="0.154"/>
+  <testcase name="createTask" classname="com.crud.tasks.controller.TaskControllerTest" time="0.015"/>
+  <testcase name="deleteTask" classname="com.crud.tasks.controller.TaskControllerTest" time="0.024"/>
+  <testcase name="getTasks" classname="com.crud.tasks.controller.TaskControllerTest" time="0.047"/>
+  <system-out><![CDATA[20:00:41.628 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.crud.tasks.controller.TaskControllerTest]
+20:00:41.629 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.crud.tasks.controller.TaskControllerTest]
+20:00:41.630 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.crud.tasks.controller.TaskControllerTest]
+20:00:41.630 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.crud.tasks.controller.TaskControllerTest]
+20:00:41.636 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@6b9fb391 testClass = TaskControllerTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@7f02b130 testClass = TaskControllerTest, locations = '{}', classes = '{class com.crud.tasks.TasksApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.OverrideAutoConfigurationContextCustomizerFactory$DisableAutoConfigurationContextCustomizer@4772c843, org.springframework.boot.test.autoconfigure.filter.TypeExcludeFiltersContextCustomizer@71338cf5, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@1d1dd676, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@372c92d4, [ImportsContextCustomizer@39db1e69 key = [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration, org.springframework.boot.autoconfigure.context.MessageSourceAutoConfiguration, org.springframework.boot.autoconfigure.data.web.SpringDataWebAutoConfiguration, org.springframework.boot.autoconfigure.freemarker.FreeMarkerAutoConfiguration, org.springframework.boot.autoconfigure.groovy.template.GroovyTemplateAutoConfiguration, org.springframework.boot.autoconfigure.gson.GsonAutoConfiguration, org.springframework.boot.autoconfigure.hateoas.HypermediaAutoConfiguration, org.springframework.boot.autoconfigure.http.HttpMessageConvertersAutoConfiguration, org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration, org.springframework.boot.autoconfigure.jsonb.JsonbAutoConfiguration, org.springframework.boot.autoconfigure.mustache.MustacheAutoConfiguration, org.springframework.boot.autoconfigure.task.TaskExecutionAutoConfiguration, org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration, org.springframework.boot.autoconfigure.validation.ValidationAutoConfiguration, org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration, org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebClientAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebDriverAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcSecurityConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@438e4c06, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@135aa319, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@930987de], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map[[empty]]], class annotated with @DirtiesContext [false] with mode [null].
+20:00:41.638 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.crud.tasks.controller.TaskControllerTest]
+20:00:41.638 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.crud.tasks.controller.TaskControllerTest]
+20:00:41.856 [Test worker] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper=true, server.port=-1}
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -104,27 +111,26 @@ Caused by: java.lang.IllegalArgumentException: json can not be null or empty
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::        (v2.2.6.RELEASE)
 
-2020-07-02 11:15:54.700  WARN 1452 --- [    Test worker] o.s.boot.StartupInfoLogger               : InetAddress.getLocalHost().getHostName() took 5005 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
-2020-07-02 11:15:56.496  INFO 1452 --- [   scheduling-1] c.crud.tasks.service.SimpleEmailService  : Starting email preparation
-2020-07-02 11:15:56.501  INFO 1452 --- [   scheduling-1] c.crud.tasks.service.SimpleEmailService  : CC has been included
-2020-07-02 11:15:59.720  INFO 1452 --- [    Test worker] c.c.tasks.controller.TaskControllerTest  : Starting TaskControllerTest on MacBook-Pro-DarekMarta.local with PID 1452 (started by darekmarta in /Users/darekmarta/Desktop/tasks)
-2020-07-02 11:15:59.740  INFO 1452 --- [    Test worker] c.c.tasks.controller.TaskControllerTest  : No active profile set, falling back to default profiles: default
-2020-07-02 11:16:04.789  INFO 1452 --- [    Test worker] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2020-07-02 11:16:05.071  INFO 1452 --- [    Test worker] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-07-02 11:16:05.291  INFO 1452 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2020-07-02 11:16:05.291  INFO 1452 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2020-07-02 11:16:05.307  INFO 1452 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 15 ms
-2020-07-02 11:16:05.335  INFO 1452 --- [    Test worker] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
-2020-07-02 11:16:05.337  INFO 1452 --- [    Test worker] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
-2020-07-02 11:16:05.354  INFO 1452 --- [    Test worker] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
-2020-07-02 11:16:05.362  INFO 1452 --- [    Test worker] c.c.tasks.controller.TaskControllerTest  : Started TaskControllerTest in 21.862 seconds (JVM running for 85.659)
+2020-07-20 20:00:52.255  WARN 2477 --- [    Test worker] o.s.boot.StartupInfoLogger               : InetAddress.getLocalHost().getHostName() took 5002 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
+2020-07-20 20:00:57.274  INFO 2477 --- [    Test worker] c.c.tasks.controller.TaskControllerTest  : Starting TaskControllerTest on MacBook-Pro-DarekMarta.local with PID 2477 (started by darekmarta in /Users/darekmarta/Desktop/tasks)
+2020-07-20 20:00:57.276  INFO 2477 --- [    Test worker] c.c.tasks.controller.TaskControllerTest  : No active profile set, falling back to default profiles: default
+2020-07-20 20:01:00.284  INFO 2477 --- [    Test worker] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-07-20 20:01:00.758  INFO 2477 --- [    Test worker] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-20 20:01:00.849  INFO 2477 --- [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-07-20 20:01:01.239  INFO 2477 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2020-07-20 20:01:01.240  INFO 2477 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2020-07-20 20:01:01.269  INFO 2477 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 28 ms
+2020-07-20 20:01:01.317  INFO 2477 --- [    Test worker] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2020-07-20 20:01:01.363  INFO 2477 --- [    Test worker] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2020-07-20 20:01:01.415  INFO 2477 --- [    Test worker] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2020-07-20 20:01:01.452  INFO 2477 --- [    Test worker] c.c.tasks.controller.TaskControllerTest  : Started TaskControllerTest in 19.582 seconds (JVM running for 21.332)
 
 MockHttpServletRequest:
       HTTP Method = PUT
-      Request URI = /v1/task/updateTask
+      Request URI = /v1/tasks
        Parameters = {}
-          Headers = [Content-Type:"application/json;charset=UTF-8", Content-Length:"57"]
-             Body = {"id":1,"title":"Test task","content":"Test description"}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Content-Length:"47"]
+             Body = {"id":1,"title":"Task","content":"Description"}
     Session Attrs = {}
 
 Handler:

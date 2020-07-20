@@ -71,6 +71,6 @@ public class DbServiceTest {
         dbService.saveTask(task);
         dbService.deleteTask(task.getId());
         //Then
-        Assert.assertNotEquals (1, dbService.getTask (task.getId()));
+        Assert.assertNotEquals (1, dbService.getTask(task.getId()));
     }
 }

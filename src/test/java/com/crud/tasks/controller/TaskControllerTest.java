@@ -46,7 +46,7 @@ public class TaskControllerTest {
         when(taskMapper.mapToTaskDtoList(taskList)).thenReturn(taskDtoList);
         when(dbService.getAllTasks()).thenReturn(taskList);
         //When&Then
-        mockMvc.perform(get("/v1/task/getTasks").contentType(MediaType.APPLICATION_JSON))
+        mockMvc.perform(get("/v1/tasks").contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(1)))
                 .andExpect(jsonPath("$[0].id", is(1)))
@@ -62,37 +62,7 @@ public class TaskControllerTest {
         when(dbService.getTask(task.getId())).thenReturn(Optional.of(task));
         when(taskMapper.mapToTaskDto(task)).thenReturn(taskDto);
         //When&Then
-        mockMvc.perform(get("/v1/task/getTask?taskId=1")
-                .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$.id", is(1)))
-                .andExpect(jsonPath("$.title", is("Task")))
-                .andExpect(jsonPath("$.content", is("Description")));
-    }
-    @Test
-    public void deleteTask() throws Exception{
-        //Given
-        Task task = new Task(1L, "Test task", "Test description");
-        //When&Then
-        mockMvc.perform(delete("/v1/task/deleteTask?taskId=1").contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk());
-    }
-
-    @Test
-    public void updateTask() throws Exception {
-        //Given
-        TaskDto taskDto = new TaskDto(1L, "Task", "Description");
-        Task task = new Task(1L, "Test task", "Test description");
-        when(taskMapper.mapToTask(taskDto)).thenReturn(task);
-        when(dbService.saveTask(ArgumentMatchers.any(Task.class))).thenReturn (task);
-        when(taskMapper.mapToTaskDto(task)).thenReturn(taskDto);
-        Gson gson = new Gson();
-        String jsonContent = gson.toJson(task);
-        //When&Then
-        mockMvc.perform(put("/v1/task/updateTask").contentType(MediaType.APPLICATION_JSON)
-                .contentType(MediaType.APPLICATION_JSON)
-                .characterEncoding("UTF-8")
-                .content(jsonContent))
+        mockMvc.perform(get("/v1/tasks/1").contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.id", is(1)))
                 .andExpect(jsonPath("$.title", is("Task")))
@@ -110,10 +80,39 @@ public class TaskControllerTest {
         Gson gson = new Gson();
         String jsonContent = gson.toJson(taskDto);
         //When&Then
-        mockMvc.perform(post("/v1/task/createTask").contentType(MediaType.APPLICATION_JSON)
-                .contentType(MediaType.APPLICATION_JSON)
+        mockMvc.perform(post("/v1/tasks").contentType(MediaType.APPLICATION_JSON)
                 .characterEncoding("UTF-8")
                 .content(jsonContent))
                 .andExpect(status().isOk());
+    }
+
+    @Test
+    public void updateTask() throws Exception {
+        //Given
+        Task task = new Task(1L, "Task", "Description");
+        TaskDto taskDto = new TaskDto(1L, "Task2", "Description2");
+        when(taskMapper.mapToTask(taskDto)).thenReturn(task);
+        when(dbService.saveTask(ArgumentMatchers.any(Task.class))).thenReturn (task);
+        when(taskMapper.mapToTaskDto(task)).thenReturn(taskDto);
+        Gson gson = new Gson();
+        String jsonContent = gson.toJson(task);
+        //When&Then
+        mockMvc.perform(put("/v1/tasks").contentType(MediaType.APPLICATION_JSON)
+                .characterEncoding("UTF-8")
+                .content(jsonContent))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.id", is(1)))
+                .andExpect(jsonPath("$.title", is("Task2")))
+                .andExpect(jsonPath("$.content", is("Description2")));
+    }
+
+    @Test
+    public void deleteTask() throws Exception{
+        //Given
+        //When & Then
+        mockMvc.perform(delete("/v1/tasks/1"))
+                .andExpect(status().is(200));
+
+        verify(dbService, times(1)).deleteTask(any());
     }
 }
