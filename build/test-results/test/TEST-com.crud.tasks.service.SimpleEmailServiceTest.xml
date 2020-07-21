@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.crud.tasks.service.SimpleEmailServiceTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-07-21T20:35:21" hostname="MacBook-Pro-DarekMarta.local" time="0.895">
+  <properties/>
+  <testcase name="shouldSendEmail" classname="com.crud.tasks.service.SimpleEmailServiceTest" time="0.895"/>
+  <system-out><![CDATA[22:35:22.416 [Test worker] INFO org.springframework.mail.SimpleMailMessage - Starting email preparation...
+22:35:22.439 [Test worker] INFO org.springframework.mail.SimpleMailMessage - Scheduled email about current quantity of tasks has been sent successfully.
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
